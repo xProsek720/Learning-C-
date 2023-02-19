@@ -7,14 +7,19 @@ namespace Konwersja
         static void Main(string[] args)
         {
 
-            int leetINT;
+            int leetInt;
+            int testInt;
 
             double leet = 13.37;
+            double testDouble = 99.99;
 
-            leetINT = (int) leet;
+            //Ten sposób obcina nam liczbę po przecinku
+            //więc czasem warto zaokrąglić Math.Round b4
+            leetInt = (int) leet;
+            testInt = (int) testDouble;
 
-            Console.WriteLine("Liczba przed konwersją: {0}", leet);
-            Console.WriteLine("Liczba po konwersji: {0}", leetINT);
+            Console.WriteLine("Liczby przed konwersją: {0}; {1}", leet, testDouble);
+            Console.WriteLine("Liczby po konwersji: {0}; {1}", leetInt, testInt);
             Console.ReadKey();
 
         }

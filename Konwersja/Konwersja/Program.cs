@@ -6,7 +6,17 @@ namespace Konwersja
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            int leetINT;
+
+            double leet = 13.37;
+
+            leetINT = (int) leet;
+
+            Console.WriteLine("Liczba przed konwersją: {0}", leet);
+            Console.WriteLine("Liczba po konwersji: {0}", leetINT);
+            Console.ReadKey();
+
         }
     }
 }

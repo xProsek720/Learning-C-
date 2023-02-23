@@ -9,6 +9,7 @@ namespace Stałe
 
         //Jak nazwa mówi są niezmienne przez cały proces wykonywania programu
         const double shortPI = 3.14159265359;
+        const int months = 12;
 
         static void Main(string[] args)
         {

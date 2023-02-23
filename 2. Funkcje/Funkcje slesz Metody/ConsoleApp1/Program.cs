@@ -9,6 +9,7 @@ namespace ConsoleApp1
             Console.Write("Podaj liczbę: ");
             string inputInt = Console.ReadLine();
             int returnInt;
+            //TryParse sprawdza i jeśli zwraca true to output kieruje na zmienną po out.
             if (int.TryParse(inputInt, out returnInt))
             { 
                 return returnInt;
@@ -19,6 +20,7 @@ namespace ConsoleApp1
             }
         }
 
+    //(zasięg) (typ zwwrotu) (nazwa funkcji) (parametry) {ciało funkcji}
         public int AddInt(int x, int y)
         {
             return x + y;
@@ -27,6 +29,8 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
+
+            //Aby wywołać metody niestatyczne potrzebujemy instancji obiektu klasy.
             Program p = new Program();
             int a = p.InputInt();
             int b = p.InputInt();

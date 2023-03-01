@@ -4,8 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Podaj temperature na zewnątrz [ w C* ]: ");
+            //Smart stacja pogodowa ;p
+            string tekstPowitalny = "Podaj temperature na zewnątrz [ w C* ]: ";
+            Console.Write(tekstPowitalny);
             string temperaturaInput = Console.ReadLine();
+            Console.Clear();
             try
             { 
                 int temperaturaLiczba= int.Parse(temperaturaInput);
@@ -15,21 +18,23 @@
                 if (temperaturaLiczba < 0)
                 {
                     Console.WriteLine("Jest mróz! Ubierz się ciepło!");
-                }
 
-                if (temperaturaLiczba > 0 && temperaturaLiczba < 10)
+                }
+                else if (temperaturaLiczba > 0 && temperaturaLiczba < 10)
                 {
                     Console.WriteLine("Weź bluzę, czapkę i długie spodnie!");
                 }
-
-                if (temperaturaLiczba > 10 && temperaturaLiczba < 20)
+                else if (temperaturaLiczba > 10 && temperaturaLiczba < 20)
                 {
                     Console.WriteLine("Weź bluzę!");
                 }
-
-                if (temperaturaLiczba > 20)
+                else if (temperaturaLiczba < 30)
                 {
                     Console.WriteLine("Dzisiaj jak w lato! B)");
+                }
+                else
+                {
+                    Console.WriteLine("Upał! Weź wodę!");
                 }
             }
             catch (Exception ex) 

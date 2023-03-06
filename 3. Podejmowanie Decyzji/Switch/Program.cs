@@ -12,6 +12,8 @@
                 Console.WriteLine("Nie udało się skonwertować opcji na numer! :(");
             }
 
+
+            //Oczywiście można użyć też stringa, ale chciałem użyć TryParse.
             switch (nrOpcji) 
             {
                 case 1: 

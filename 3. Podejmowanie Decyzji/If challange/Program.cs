@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             int score;
-            int highscore = 419;
+            int highscore = 360;
 
             string highscorePlayer = "xProsek720";
             string playerName;

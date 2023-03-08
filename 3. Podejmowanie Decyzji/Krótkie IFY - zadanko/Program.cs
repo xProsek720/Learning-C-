@@ -4,8 +4,11 @@
     {
         static void Main(string[] args)
         {
-            string inputTemperature, wiadomość, template, ifOutput;
+            string inputTemperature, wiadomość, template;
             int parsedTemperature;
+
+            //sposób na zainicjowanie pustego stringa
+            string ifOutput = string.Empty;
 
             wiadomość = "Podaj temperature: ";
             template = "...*C";

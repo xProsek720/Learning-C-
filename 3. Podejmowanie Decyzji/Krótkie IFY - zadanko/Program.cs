@@ -24,6 +24,7 @@
 
             ifOutput = parsedTemperature <= 15 ? "Zimno tu, brrr." : parsedTemperature < 29 ? "Temperatura jest okej." : "Tu jest gorąco!";
             Console.WriteLine(ifOutput);
+            Console.Read();
 
         }
     }

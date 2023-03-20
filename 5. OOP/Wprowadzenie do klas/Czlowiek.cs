@@ -11,11 +11,17 @@ namespace Wprowadzenie_do_klas
         public string imie = "ERR:nieUstawiono";
         private string nazwisko = "ERR:nieUstawiono";
 
+
+        public Czlowiek(string imie, string nazwisko) 
+        {
+            this.imie = imie;
+            this.nazwisko= nazwisko;
+        }
+
         public void PrzedstawSie() 
         {
             Console.WriteLine($"Cześć, nazywam sie {imie} {nazwisko}.");
         }
-
         public void UstawNazwisko(string nazwisko) 
         {
             this.nazwisko = nazwisko; 

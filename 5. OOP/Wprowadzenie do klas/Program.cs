@@ -4,9 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Czlowiek filip = new Czlowiek();
-            filip.imie = "Filip";
-            filip.UstawNazwisko("Proskowy");
+            Czlowiek filip = new Czlowiek("Filip", "Proskowy");
             filip.PrzedstawSie();
 
             Czlowiek marcel = new Czlowiek();

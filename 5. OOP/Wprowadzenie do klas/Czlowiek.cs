@@ -15,7 +15,12 @@ namespace Wprowadzenie_do_klas
         {
         
         }
-        
+        public Czlowiek(string nazwisko)
+        {
+            this.nazwisko = nazwisko;
+        }
+
+
         public Czlowiek(string imie, string nazwisko) 
         {
             this.imie = imie;

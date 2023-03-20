@@ -11,7 +11,11 @@ namespace Wprowadzenie_do_klas
         public string imie = "ERR:nieUstawiono";
         private string nazwisko = "ERR:nieUstawiono";
 
-
+        public Czlowiek() 
+        {
+        
+        }
+        
         public Czlowiek(string imie, string nazwisko) 
         {
             this.imie = imie;

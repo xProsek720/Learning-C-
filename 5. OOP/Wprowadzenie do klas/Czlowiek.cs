@@ -8,11 +8,11 @@ namespace Wprowadzenie_do_klas
 {
     internal class Czlowiek
     {
+        private string stdERR = "ERR:nieUstawiono";
         private string imie = "ERR:nieUstawiono";
         private string nazwisko = "ERR:nieUstawiono";
         private int rokUrodzenia = -1;
         private string kolorOczu = "ERR:nieUstawiono";
-
 
         public Czlowiek() 
         {
@@ -24,6 +24,12 @@ namespace Wprowadzenie_do_klas
             this.imie = imie;
             this.nazwisko= nazwisko;
         }
+        public Czlowiek(string imie, string nazwisko, int rokUrodzenia) 
+        {
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.rokUrodzenia = rokUrodzenia;
+        }
         public Czlowiek(string imie, string nazwisko, int rokUrodzenia, string kolorOczu) 
         {
             this.imie = imie;
@@ -34,7 +40,22 @@ namespace Wprowadzenie_do_klas
 
         public void PrzedstawSie() 
         {
-            Console.WriteLine($"Cześć, nazywam sie {imie} {nazwisko}.");
+            if (kolorOczu.Equals(stdERR) && rokUrodzenia == -1 && !(imie.Equals(stdERR) && nazwisko.Equals(stdERR)))
+            {
+                Console.WriteLine($"Cześć, nazywam sie {imie} {nazwisko}.");
+            }
+            else if (kolorOczu.Equals(stdERR) && !(imie.Equals(stdERR) && nazwisko.Equals(stdERR)))
+            {
+                Console.WriteLine($"Cześć, nazywam sie {imie} {nazwisko}.\nUrodziłem się w {rokUrodzenia}");
+            }
+            else if (imie.Equals(stdERR) && nazwisko.Equals(stdERR)) 
+            {
+                Console.WriteLine($"Błąd krytyczny wczytania tego człowieka! :(");
+            }
+            else
+            {
+                Console.WriteLine($"Cześć, nazywam sie {imie} {nazwisko}.\nUrodziłem się w {rokUrodzenia}\nMam oczy koloru: {kolorOczu}");
+            }
         }
         public void UstawImie(string imie) 
         {

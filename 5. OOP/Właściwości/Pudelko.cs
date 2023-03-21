@@ -37,14 +37,26 @@ namespace Właściwości
 
         public void UstawDlugosc(int dlugosc) 
         {
+            if (dlugosc < 0) 
+            {
+                throw new Exception("int dlugosc should be greater than 0!");
+            }
             this.dlugosc = dlugosc;
         }
-        public void UstawSzerokosc(int szerokosc) 
+        public void UstawSzerokosc(int szerokosc)
         {
+            if (szerokosc < 0)
+            {
+                throw new Exception("int szerokosc should be greater than 0!");
+            }
             this.szerokosc = szerokosc;
         }
-        public void UstawWysokosc(int wysokosc) 
+        public void UstawWysokosc(int wysokosc)
         {
+            if (wysokosc < 0)
+            {
+                throw new Exception("int wysokosc should be greater than 0!");
+            }
             this.wysokosc = wysokosc;
         }
         public int ZwrocDlugosc() 

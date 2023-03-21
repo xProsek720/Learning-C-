@@ -8,9 +8,9 @@
             Pudelko[] arr = new Pudelko[4];
             Pudelko p1 = new Pudelko();
             arr[0] = p1;
-            Pudelko p2 = new Pudelko(1);
+            Pudelko p2 = new Pudelko(6);
             arr[1] = p2;
-            Pudelko p3 = new Pudelko(1,2);
+            Pudelko p3 = new Pudelko(4,5);
             arr[2] = p3;
             Pudelko p4 = new Pudelko(1,2,3);
             arr[3] = p4;
@@ -23,11 +23,11 @@
             Console.WriteLine("Teraz pora uzupełnić brakujace dane i ponowić pętle!");
             Console.ReadKey();
             //p1
-            arr[0].UstawDlugosc(2); arr[0].UstawSzerokosc(2); arr[0].UstawWysokosc(2);
+            arr[0].UstawDlugosc(4); arr[0].UstawSzerokosc(4); arr[0].UstawWysokosc(4);
             //p2
-            arr[1].UstawSzerokosc(3); arr[1].UstawWysokosc(3);
+            arr[1].UstawSzerokosc(5); arr[1].UstawWysokosc(5);
             //p3
-            arr[2].UstawWysokosc(4);
+            arr[2].UstawWysokosc(6);
             //reset countera
             counter = 1;
             //clear

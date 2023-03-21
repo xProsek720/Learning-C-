@@ -10,8 +10,8 @@ namespace Właściwości
     {
         //member variable
         //to akurat po angielsku
-        private int dlugosc = -1;
-        private int szerokosc = -1;
+        private int dlugosc;
+        private int szerokosc;
         private int wysokosc;
         private int objetosc;
 
@@ -61,6 +61,7 @@ namespace Właściwości
         }
         public int ZwrocObjetosc() 
         {
+            PoliczObjetosc();
             if (objetosc > 0)
             {
                 return (this.objetosc);

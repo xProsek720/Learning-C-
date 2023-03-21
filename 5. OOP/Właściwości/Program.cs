@@ -20,7 +20,26 @@
                 PrintPudelko(p);
                 Console.WriteLine();
             }
-            
+            Console.WriteLine("Teraz pora uzupełnić brakujace dane i ponowić pętle!");
+            Console.ReadKey();
+            //p1
+            arr[0].UstawDlugosc(2); arr[0].UstawSzerokosc(2); arr[0].UstawWysokosc(2);
+            //p2
+            arr[1].UstawSzerokosc(3); arr[1].UstawWysokosc(3);
+            //p3
+            arr[2].UstawWysokosc(4);
+            //reset countera
+            counter = 1;
+            //clear
+            Console.Clear();
+
+            foreach (Pudelko p in arr)
+            {
+                Console.WriteLine($"Pudełko nr {counter++}: ");
+                PrintPudelko(p);
+                Console.WriteLine();
+            }
+            Console.ReadKey();
         }
         public static void PrintPudelko(Pudelko p) 
         {

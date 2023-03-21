@@ -14,9 +14,13 @@ namespace Wprowadzenie_do_klas
         private int rokUrodzenia = -1;
         private string kolorOczu = "ERR:nieUstawiono";
 
-        public Czlowiek() 
+        public Czlowiek()
         {
-        
+
+        }
+        public Czlowiek(string imie)
+        {
+            this.imie = imie;
         }
 
         public Czlowiek(string imie, string nazwisko) 
@@ -39,16 +43,22 @@ namespace Wprowadzenie_do_klas
         }
 
         public void PrzedstawSie() 
-        {
-            if (kolorOczu.Equals(stdERR) && rokUrodzenia == -1 && !(imie.Equals(stdERR) && nazwisko.Equals(stdERR)))
+        {   
+            //Te warunki można by zrobić ładniej, przepraszam
+
+            if (kolorOczu.Equals(stdERR) && rokUrodzenia == -1 && !(imie.Equals(stdERR) && nazwisko.Equals(stdERR)) && !nazwisko.Equals(stdERR))
             {
                 Console.WriteLine($"Cześć, nazywam sie {imie} {nazwisko}.");
             }
-            else if (kolorOczu.Equals(stdERR) && !(imie.Equals(stdERR) && nazwisko.Equals(stdERR)))
+            else if (kolorOczu.Equals(stdERR) && !(imie.Equals(stdERR) && nazwisko.Equals(stdERR)) && !nazwisko.Equals(stdERR))
             {
                 Console.WriteLine($"Cześć, nazywam sie {imie} {nazwisko}.\nUrodziłem się w {rokUrodzenia}");
             }
-            else if (imie.Equals(stdERR) && nazwisko.Equals(stdERR)) 
+            else if (nazwisko.Equals(stdERR) && !imie.Equals(stdERR)) 
+            {
+                Console.WriteLine($"Cześć, nazywam sie {imie}.");
+            }
+            else if (imie.Equals(stdERR) && nazwisko.Equals(stdERR))
             {
                 Console.WriteLine($"Błąd krytyczny wczytania tego człowieka! :(");
             }

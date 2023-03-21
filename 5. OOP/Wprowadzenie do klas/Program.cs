@@ -14,6 +14,9 @@
             marcel.UstawNazwisko("Testowy");
             marcel.PrzedstawSie();
 
+            Czlowiek karolina = new Czlowiek("Karolina");
+            karolina.PrzedstawSie();
+
         }
     }
 }

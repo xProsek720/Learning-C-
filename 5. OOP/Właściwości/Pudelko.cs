@@ -16,6 +16,18 @@ namespace Właściwości
         //private int szerokosc;
         //private int objetosc;
 
+        //Stworzyć właściwość która jest tylko do odczytu
+        //i za jej pomocą obliczana jest powierzchnia
+        //przedniej ściany [wysokość * długość]
+        public int PrzedniaSciana 
+        {
+            get 
+            {
+                return dlugosc*Wysokosc; 
+            }
+        }
+
+
         //skrocona własciwość
         public int Szerokosc{ get; set; }
 

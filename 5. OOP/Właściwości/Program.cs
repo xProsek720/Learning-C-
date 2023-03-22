@@ -47,6 +47,7 @@
             Console.WriteLine($"    Szerokość: {p.Szerokosc}");
             Console.WriteLine($"    Wysokość: {p.Wysokosc}");
             Console.WriteLine($"    Objętość: {p.Objetosc}");
+            Console.WriteLine($"    S przedniej ściany: {p.PrzedniaSciana}");
         }
     }
 }

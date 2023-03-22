@@ -11,9 +11,10 @@ namespace Właściwości
         //member variable
         //to akurat po angielsku
         private int dlugosc;
-        //private int szerokosc;
         private int wysokosc;
-        private int objetosc;
+        private bool nieWylaczone = false;
+        //private int szerokosc;
+        //private int objetosc;
 
         //skrocona własciwość
         public int Szerokosc{ get; set; }

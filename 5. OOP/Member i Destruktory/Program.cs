@@ -19,6 +19,9 @@
 
             Console.WriteLine($"Osoba {counter++}:");
             kL.PrzedstawSie(true);
+
+            Console.Read();
+            
         }
     }
 }

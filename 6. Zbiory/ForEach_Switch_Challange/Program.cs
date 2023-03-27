@@ -22,27 +22,13 @@
                 switch (input2Parsed) 
                 {
                     case 1:
-                        {
-                            bool passedTest = true;
-                            foreach (char litera in input) 
+                        { 
+                            Console.WriteLine($"Wpisałeś: ,,{input}\'\'.");
+                            if (!JestLiteralem(input)) 
                             {
-                                if (!char.IsLetter(litera))
-                                {
-                                    passedTest = false;
-                                }
-                                else 
-                                {
-                                    passedTest = true;
-                                }
+                                Console.WriteLine($"Podałeś liczby w Stringu.");
                             }
-                            if (passedTest) 
-                            {
-                                Console.WriteLine($"Wpisałeś: ,,{input}\'\'.");
-                            }
-                            else 
-                            {
-                                Console.WriteLine($"Podałeś same liczby: {input}");
-                            }
+                            
                             break;
                         }
                     case 2: 
@@ -91,6 +77,19 @@
                         }
                 }
             }
+        }
+
+        static bool JestLiteralem(string input) 
+        {
+            bool passedTest = true;
+            foreach (char litera in input)
+            {
+                if (!char.IsLetter(litera))
+                {
+                    passedTest = false;
+                }
+            }
+            return passedTest;
         }
     }
 }

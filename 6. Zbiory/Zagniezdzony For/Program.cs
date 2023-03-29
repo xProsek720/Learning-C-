@@ -34,11 +34,13 @@
             
             Console.WriteLine("Nacisnij Enter, aby wyświetlić te liczby...");
             Console.ReadLine();
-            for (i = 0; i < 10; i++)
+
+            //EDIT: Piszę o fajnej metodzie, a zapomniałem jej wcześniej użyć
+            for (i = 0; i < intMatrix.GetLength(0); i++)
             {
-                for (j = 0; j < 10; j++)
+                for (j = 0; j < intMatrix.GetLength(1); j++)
                 {
-                    for (k = 0; k < 10; k++)
+                    for (k = 0; k < intMatrix.GetLength(2); k++)
                     {
                         Console.WriteLine($"intMatrix[{i}, {j}, {k}] = {intMatrix[i, j, k]}"); ;
                     }

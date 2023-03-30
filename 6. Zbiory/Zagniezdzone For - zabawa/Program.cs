@@ -26,6 +26,7 @@
             }
             Console.WriteLine();
             Console.WriteLine("Lewa Przekątna: ");
+            
             for (i = 0; i < intMatrix.GetLength(0); i++)
             {
                 for (j = 0; j < intMatrix.GetLength(1); j++)
@@ -38,6 +39,17 @@
                     if (j == 2) { Console.WriteLine(); }
                 }
             }
+            
+            Console.WriteLine();
+            //Optymalizacja ale drukuje w jednej lini
+            Console.WriteLine("W jednej linii: ");
+            for (i = 0; i < intMatrix.GetLength(0); i++) 
+            {
+                
+                Console.Write($"{intMatrix[i,i]} ");
+
+            }
+            Console.WriteLine();
 
             Console.WriteLine();
             Console.WriteLine("Prawa Przekątna: ");
@@ -53,6 +65,16 @@
                     if (j == 2) { Console.WriteLine(); }
                 }
             }
+            Console.WriteLine();
+            //Optymalizacja ale drukuje w jednej lini
+            Console.WriteLine("W jednej lini: ");
+            for (i = 0; i < intMatrix.GetLength(0); i++)
+            {
+
+                Console.Write($"{intMatrix[i, (intMatrix.GetLength(1)-1-i)]} ");
+
+            }
+            Console.WriteLine();
             Console.ReadLine();
         }
     }

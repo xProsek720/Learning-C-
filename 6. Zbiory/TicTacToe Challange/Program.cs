@@ -36,16 +36,18 @@
                 board = BotMove(board);
                 PrintBoard(board);
                 gameStatus = Checker(board);
-                if (gameStatus == 1 || gameStatus == 2) 
+                if (gameStatus == 1 || gameStatus == 2 || gameStatus == 3) 
                 {
                     Console.WriteLine("GAME HAS ENDED!");
                     PrintBoard(board);
                     gameRunning= false;
                 }
             }
-            if (gameStatus == 1) 
+            if (gameStatus == 1)
             { Console.WriteLine("YOU WON!"); }
-            else 
+            else if (gameStatus == 3) 
+            { Console.WriteLine("DRAW!"); }
+            else
             { Console.WriteLine("YOU LOST!"); }
             Console.ReadLine();   
         }
@@ -66,6 +68,14 @@
             }
             board[row, col] = "O";
             return board;
+        }
+        public static bool CheckDraw(string[,] board) 
+        {
+            foreach (var item in board) 
+            {
+                if (item == null) { return false; }
+            }
+            return true;
         }
         public static bool CheckPlace(string[,] board, int row, int col) 
         {
@@ -197,6 +207,10 @@
                 {
                     return 2; 
                 }
+            }
+            if (CheckDraw(board)) 
+            {
+                return 3;
             }
             return 0;
         }

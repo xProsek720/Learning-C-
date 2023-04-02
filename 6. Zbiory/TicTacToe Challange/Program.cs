@@ -4,6 +4,144 @@
     {
 
         //Udemy CHALLANGE
+        public static void Main() 
+        {
+            Game();
+        }
+
+        public static void Game() 
+        {
+            bool gameRunning = true;
+            int gameStatus = 0;
+            int selRow, selCol;
+            string[,] board = new string[3,3];
+            Console.WriteLine("You are X!");
+            while (gameRunning)
+            {
+                Console.WriteLine("Here is board:");
+                PrintBoard(board);
+                selRow = ChooseRow();
+                selCol = ChooseColumn();
+                if (CheckPlace(board, selRow, selCol))
+                {
+                    board[selRow, selCol] = "X";
+                }
+                else
+                {
+                    Console.WriteLine("Occupied!");
+                    PrintBoard(board);
+                    selRow = ChooseRow();
+                    selCol = ChooseColumn();
+                }
+                board = BotMove(board);
+                PrintBoard(board);
+                gameStatus = Checker(board);
+                if (gameStatus == 1 || gameStatus == 2) 
+                {
+                    Console.WriteLine("GAME HAS ENDED!");
+                    PrintBoard(board);
+                    gameRunning= false;
+                }
+            }
+            if (gameStatus == 1) 
+            { Console.WriteLine("YOU WON!"); }
+            else 
+            { Console.WriteLine("YOU LOST!"); }
+            Console.ReadLine();   
+        }
+        
+        public static string[,] BotMove(string[,] board) 
+        {
+            Random rnd = new Random();
+            bool occupied = true;
+            int row = -1, col = -1;
+            while (occupied) 
+            {
+                row = rnd.Next(board.GetLength(0));
+                col = rnd.Next(board.GetLength(1));
+                if (CheckPlace(board, row, col)) 
+                {
+                    occupied= false;
+                }
+            }
+            board[row, col] = "O";
+            return board;
+        }
+        public static bool CheckPlace(string[,] board, int row, int col) 
+        {
+            if (row>=0 && col>=0 && row <=2 && col <= 2) 
+            {
+                if (board[row, col] == null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else 
+            {
+                return false;
+            }
+           
+        }
+        public static int ChooseRow()
+        {
+            Console.Write("Row(0-2): ");
+            char input = Console.ReadKey().KeyChar;
+
+            int row = int.Parse(input.ToString());
+            if (row >= 0 && row <= 2)
+            {
+                return row;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        public static int ChooseColumn()
+        {
+            Console.Write(" Column(0-2): ");
+            char input = Console.ReadKey().KeyChar;
+            Console.Write('\n');
+            int col = int.Parse(input.ToString());
+            if (col >= 0 && col <= 2)
+            {
+                return col;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        public static void PrintBoard(string[,]board) 
+        {
+            int counterX = 0;
+            int counterY = 0;
+            foreach (var item in board)
+            {
+                counterX++;
+                
+                if (item == null)
+                {
+                    Console.Write($"- ");
+                }
+                else
+                { 
+                    Console.Write($"{item} ");
+                }
+                if (counterX == 3)
+                {
+                    Console.Write("\n");
+                    counterY++;
+                    counterX = 0;
+                }
+            }
+        }
+
 
         public static int GetCharQuantity(string[] text, string letter)
         {
@@ -17,7 +155,7 @@
             }
             return counter;
         }
-        public static bool Checker(string[,] board)
+        public static int Checker(string[,] board)
         {
             string[] rDiag = new string[3];
             string[] lDiag = new string[3];
@@ -41,16 +179,26 @@
             string[] chars = { "X", "O" };
             foreach (string c in chars)
             {
-                if (GetCharQuantity(rDiag, c) == 3) return true;
-                if (GetCharQuantity(lDiag, c) == 3) return true;
-                if (GetCharQuantity(fV, c) == 3) return true;
-                if (GetCharQuantity(sV, c) == 3) return true;
-                if (GetCharQuantity(tV, c) == 3) return true;
-                if (GetCharQuantity(fC, c) == 3) return true;
-                if (GetCharQuantity(sC, c) == 3) return true;
-                if (GetCharQuantity(tC, c) == 3) return true;
+                bool end = false;
+                bool X = false;
+                if (GetCharQuantity(rDiag, c) == 3) end = true;
+                if (GetCharQuantity(lDiag, c) == 3) end = true;
+                if (GetCharQuantity(fV, c) == 3) end = true;
+                if (GetCharQuantity(sV, c) == 3) end = true;
+                if (GetCharQuantity(tV, c) == 3) end = true;
+                if (GetCharQuantity(fC, c) == 3) end = true;
+                if (GetCharQuantity(sC, c) == 3) end = true;
+                if (GetCharQuantity(tC, c) == 3) end = true;
+                if (c == "X" && end == true) 
+                {
+                    return 1;
+                }
+                if (c == "O" && end == true) 
+                {
+                    return 2; 
+                }
             }
-            return false;
+            return 0;
         }
     }
 }

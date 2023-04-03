@@ -32,6 +32,18 @@
                     PrintBoard(board);
                     selRow = ChooseRow();
                     selCol = ChooseColumn();
+                    if (CheckPlace(board, selRow, selCol))
+                    {
+                        board[selRow, selCol] = "X";
+                    }
+                }
+                gameStatus = Checker(board);
+                if (gameStatus == 1 || gameStatus == 2 || gameStatus == 3)
+                {
+                    Console.WriteLine("GAME HAS ENDED!");
+                    PrintBoard(board);
+                    gameRunning = false;
+                    break;
                 }
                 board = BotMove(board);
                 PrintBoard(board);
@@ -41,6 +53,7 @@
                     Console.WriteLine("GAME HAS ENDED!");
                     PrintBoard(board);
                     gameRunning= false;
+                    break;
                 }
             }
             if (gameStatus == 1)

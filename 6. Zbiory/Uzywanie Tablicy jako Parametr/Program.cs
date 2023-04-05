@@ -45,14 +45,14 @@
             return srednia;
         }
 
-        public static int[] ZwiekszSzczescie(int[] szczescie) 
+        //Referencja i nie musi zwracać :D
+        public static void ZwiekszSzczescie(int[] szczescie) 
         {
             Console.WriteLine("Zwiekszam poziomy szczęścia o 2");
             for (int i =0; i < szczescie.Length; i++) 
             {
                 szczescie[i] += 2;
             }
-            return szczescie;
         }
 
         public static void PokazSzczescie(int[] szczescie) 

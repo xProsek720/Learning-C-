@@ -6,8 +6,11 @@ namespace Rodzajowe_i_nierodzajowe_Zbiory
     {
         static void Main(string[] args)
         {
+
+        //Nieodzajowy zbiór:
+            
             //Bez definiowania ilości elementów
-            ArrayList arrayList= new ArrayList();
+            ArrayList arrayList = new ArrayList();
             //Zdefiniowania ilośc elementów
             ArrayList arrayList2= new ArrayList(3);
         
@@ -48,6 +51,13 @@ namespace Rodzajowe_i_nierodzajowe_Zbiory
                 Console.Write($"{obj} ");
             }
             Console.Write("\n");
+
+
+        //Rodzajowy zbiór:
+            //To w kolejnych push'ach!
+            List<string> list = new List<string>();
+
+
 
         }
     }

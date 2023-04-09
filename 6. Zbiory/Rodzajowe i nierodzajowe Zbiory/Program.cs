@@ -32,6 +32,7 @@ namespace Rodzajowe_i_nierodzajowe_Zbiory
             arrayList2.RemoveAt(1);
 
 
+            arrayList2.Add("Everyday");
             //Moglo by byc cos bardziej kreatywnego, ale sa swieta
             // i mam inne plany B)
             Console.Write("arrayList: ");

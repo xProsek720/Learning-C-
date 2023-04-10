@@ -57,6 +57,27 @@ namespace Rodzajowe_i_nierodzajowe_Zbiory
             //To w kolejnych push'ach!
             List<string> list = new List<string>();
 
+            //Dodawanie
+            list.Add("1");
+            list.Add("2");
+            list.Add("3");
+            list.Add("4");
+            list.Add("5");
+            list.Add("6");
+
+            //Usuwanie
+            list.Remove("3");
+
+            //Usuwanie z Pozycji
+            list.RemoveAt(1);   //Usuwa 2jke
+
+            Console.Write("Lista: ");
+            foreach (string element in list) 
+            {
+                Console.Write($"{element} ");
+            }
+            Console.ReadLine();
+
 
 
         }

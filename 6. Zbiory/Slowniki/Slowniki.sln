@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slowniki", "Slowniki.csproj", "{5DB44698-5D12-4EFC-BE08-D019CEAC697A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DB44698-5D12-4EFC-BE08-D019CEAC697A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB44698-5D12-4EFC-BE08-D019CEAC697A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB44698-5D12-4EFC-BE08-D019CEAC697A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB44698-5D12-4EFC-BE08-D019CEAC697A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3539AE25-BCB9-4F3A-8395-7841A1F02A66}
+	EndGlobalSection
+EndGlobal

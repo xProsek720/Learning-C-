@@ -26,8 +26,29 @@
             {
                 Console.WriteLine($"{klucz}: {kody[klucz]}");
             }
+
+            SprawdzKod("AMS", kody);
+
+            Console.WriteLine();
+            Console.WriteLine("Zasymulujmy dodanie lotu do Amsterdamu");
+            kody.Add("AMS", "Amsterdam");
+            SprawdzKod("AMS", kody);
+
+            
             Console.ReadLine();
 
+        }
+
+        public static void SprawdzKod(string kod, Dictionary<string, string> kody) 
+        {
+            if (kody.ContainsKey(kod))
+            {
+                Console.WriteLine($"Istnieje połączenie dzisiaj z {kod} - {kody[kod]}");
+            }
+            else
+            {
+                Console.WriteLine($"Dzisiaj nie ma żadnego połączenia z {kod}");
+            }
         }
     }
 }

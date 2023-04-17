@@ -38,6 +38,13 @@
             kody.Add("DUB", "Dublin");
             WypiszWszytkie(kody);
 
+            Console.WriteLine();
+            SprawdzIDodaj(kody, "BER", "Berlin");
+            SprawdzIDodaj(kody, "AMS", "TEST");
+
+            SprawdzIDodaj(kody, "TST", "TEST");
+            SprawdzIUsun(kody, "LOL");
+            SprawdzIUsun(kody, "TST");
             Console.ReadLine();
 
         }
@@ -76,5 +83,35 @@
             }
             Console.WriteLine("Zakończono!");
         }
+
+        public static void SprawdzIDodaj(Dictionary<string, string> dict, string key, string value) 
+        {
+            if (dict.ContainsKey(key))
+            {
+                Console.WriteLine($"Przykro mi, ale już istnieje taki klucz ('{key}')! :(");
+            }
+            else 
+            {
+                dict.Add(key, value);
+                //ewentualnie
+                //dict[key] = value;
+                Console.WriteLine($"Pomyślnie dodano: {key} - {value} do słownika.");
+            }
+        }
+
+        public static void SprawdzIUsun(Dictionary<string, string> dict, string key) 
+        {
+            if (dict.ContainsKey(key))
+            {
+                dict.Remove(key);
+                Console.WriteLine($"Pomyślnie usunięto: {key} ze słownika.");
+            }
+            else 
+            {
+                Console.WriteLine($"Przykro mi, ale nie istnieje taki klucz ('{key}')! :(");    
+            }
+        }
+
+
     }
 }

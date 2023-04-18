@@ -2,9 +2,31 @@
 {
     internal class Program
     {
+        public static string Convert(int i)
+        {
+            string ret;
+            Dictionary<int, string> dict = new Dictionary<int, string>
+            {
+                {0, "zero"},
+                {1, "one"},
+                {2, "two"},
+                {3, "three"},
+                {4, "four"},
+                {5, "five"}
+            };
+            if (!(i <= 5 && i >= 0))
+            {
+                ret = "nope";
+            }
+            else
+            {
+                ret = dict[i];
+            }
+            return ret;
+        }
         static void Main(string[] args)
         {
-            
+            Console.WriteLine(Convert(2));
             Dictionary<int, string> slownik1 = new Dictionary<int, string>() 
             {
                 {1, "one"},

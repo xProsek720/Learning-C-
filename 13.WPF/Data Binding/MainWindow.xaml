@@ -1,0 +1,46 @@
+﻿<Window x:Class="Data_Binding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Data_Binding"
+        mc:Ignorable="d"
+        Title="DataBinding" Height="600" Width="860">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            
+            <!-- ONE WAY Textbox is target -->
+            <TextBlock TextAlignment="Center" Text="One Way" Margin="0, 10, 0, 0"></TextBlock>
+            <TextBox TextAlignment="Center" Width="100" Margin="0, 10, 0, 0" Text="{Binding ElementName=Slajder, Path=Value, Mode=OneWay}"></TextBox>
+            <Slider IsSnapToTickEnabled="True" Name ="Slajder" Margin="0, 10, 0, 0" Minimum="0" Maximum="100" Width="100"></Slider>
+            
+            <!-- TWO MENUS NEXT TO EACH OTHER -->
+            <WrapPanel HorizontalAlignment="Center">
+                
+                <!-- TWO WAY Sliding is binding source -->
+                <StackPanel Margin="20, 0, 20, 0">
+                    <TextBlock TextAlignment="Center" Text="Two Way" Margin="0, 10, 0, 0"></TextBlock>
+                    <TextBox TextAlignment="Center" Width="100" Margin="0, 10, 0, 0" Text="{Binding ElementName=Slajder1, Path=Value, Mode=TwoWay}"></TextBox>
+                    <Slider IsSnapToTickEnabled="True" Name ="Slajder1" Margin="0, 10, 0, 0" Minimum="0" Maximum="100" Width="100"></Slider>
+                </StackPanel>
+
+                <!-- AUTO TWO WAY -->
+                <StackPanel Margin="20, 0, 20, 0">
+                    <TextBlock TextAlignment="Center" Text="Auto Two Way" Margin="0, 10, 0, 0"></TextBlock>
+                    <TextBox TextAlignment="Center" Width="100" Margin="0, 10, 0, 0" Text="{Binding ElementName=Slajder4, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    <Slider IsSnapToTickEnabled="True" Name ="Slajder4" Margin="0, 10, 0, 0" Minimum="0" Maximum="100" Width="100"></Slider>
+                </StackPanel>
+            </WrapPanel>
+            
+            <!-- ONE WAY Textbox is sourcing slider -->
+            <TextBlock TextAlignment="Center" Margin="0, 10, 0, 0" Text="One Way To Source"></TextBlock>
+            <TextBox TextAlignment="Center" Width="100" Margin="0, 10, 0, 0" Text="{Binding ElementName=Slajder2, Path=Value, Mode=OneWayToSource}"></TextBox>
+            <Slider IsSnapToTickEnabled="True" Name ="Slajder2" Margin="0, 10, 0, 0" Minimum="0" Maximum="100" Width="100"></Slider>
+            
+            <!-- ONE TIME -->
+            <TextBlock TextAlignment="Center" Text="One Time" Margin="0, 10, 0, 0"></TextBlock>
+            <TextBox Name = "TextBox1"  TextAlignment="Center" Width="100" Margin="0, 10, 0, 0" Text="{Binding ElementName=Slajder3, Path=Value, Mode=OneTime}"></TextBox>
+            <Slider IsSnapToTickEnabled="True" Name ="Slajder3" Margin="0, 10, 0, 0" Minimum="0" Maximum="100" Width="100"></Slider>
+        </StackPanel>
+    </Grid>
+</Window>

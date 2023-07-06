@@ -16,6 +16,9 @@
             ImagePost imgPost1 = new ImagePost("test1", "xProsek", true, "https://imgur.com/rand0m");
             Console.WriteLine(imgPost1);
             //Console.WriteLine(imgPost1.ReturnLink());
+
+            VideoPost vidPost1 = new VideoPost("test1", "xProsek", true, "https://youtube.com/w/rnd0m");
+            Console.WriteLine(vidPost1);
         }
     }
 }

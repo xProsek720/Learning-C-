@@ -17,8 +17,14 @@
             Console.WriteLine(imgPost1);
             //Console.WriteLine(imgPost1.ReturnLink());
 
-            VideoPost vidPost1 = new VideoPost("test1", "xProsek", true, "https://youtube.com/w/rnd0m");
+            VideoPost vidPost1 = new VideoPost("test1", "xProsek", true, "https://youtube.com/w/rnd0m", 12);
             Console.WriteLine(vidPost1);
+
+            vidPost1.Play();
+            Console.WriteLine("Press any key to stop the video...");
+            Console.ReadKey();
+            vidPost1.Stop();
+
         }
     }
 }

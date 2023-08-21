@@ -4,7 +4,21 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            CatShelter cs = new CatShelter();
+            foreach (Cat cat in cs) 
+            {
+                Console.WriteLine(cat);
+                if (!cat.IsABadCat)
+                {
+                    cat.FeedTheCat(2);
+                }
+                else
+                {
+                    cat.FeedTheCat(1);
+                }
+                Console.WriteLine();
+
+            }
         }
     }
 }
